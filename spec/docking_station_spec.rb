@@ -5,4 +5,7 @@ describe DockingStation do
   it "Expects new instance of bike class" do
     expect(Bike.new.working?).to eq true
   end
+  it "docking station to respond to dock" do
+    expect(DockingStation.new).to respond_to(:dock).with(1).argument
+  end
 end
