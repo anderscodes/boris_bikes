@@ -8,4 +8,9 @@ describe DockingStation do
   it "docking station to respond to dock" do
     expect(DockingStation.new).to respond_to(:dock).with(1).argument
   end
+
+  it "docking station to respond to bike" do
+  expect(DockingStation.new).to respond_to(:bike)
+end
+
 end
