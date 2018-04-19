@@ -6,7 +6,6 @@ attr_reader :bike
 
   def release_bike
     if @bike
-      puts "FOOO"
       @bike
     else
       fail RuntimeError, "No bikes available."
@@ -14,7 +13,9 @@ attr_reader :bike
   end
 
   def dock(bike)
-    @bike = bike
+    if @bike == nil then @bike = bike
+    else fail RuntimeError, "Bike already docked"
+    end
   end
 
 
