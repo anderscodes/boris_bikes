@@ -9,20 +9,32 @@ end
  attr_reader  :bikes
 
 def release_bike
-  if @bikes != []
+    if empty?
+     fail RuntimeError, "No bikes available."
+    else
      @bikes.pop
+    end
+end
+
+def dock(bike)
+  if full?
+    fail RuntimeError, "Docking Station full"
   else
-    fail RuntimeError, "No bikes available."
+    @bikes.push(bike)
   end
 end
 
+private
 
-  def dock(bike)
-
-    if @bikes.length < 20 then @bikes.push(bike)
-    else fail RuntimeError, "Docking Station full"
-    end
+def full?
+  if @bikes.length >= 20
+     true
   end
+end
 
-
+def empty?
+  if @bikes == []
+   true
+  end
+end
 end
