@@ -20,7 +20,7 @@ end
   def dock(bike)
 
     if @bikes.length < 20 then @bikes.push(bike)
-    else fail RuntimeError, "Bike already docked"
+    else fail RuntimeError, "Docking Station full"
     end
   end
 
