@@ -13,7 +13,7 @@ describe DockingStation do
   it "raises error if bike already docked" do
     bike = Bike.new
     subject.dock(bike)
-    expect{ 20.times { subject.dock(bike) } }.to raise_error
+    expect{ DEFAULT_CAPACITY.times { subject.dock(bike) } }.to raise_error
   end
 
 describe "#release_bike" do

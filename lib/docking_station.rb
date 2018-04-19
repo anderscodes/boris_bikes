@@ -2,6 +2,8 @@ require_relative 'bike.rb'
 
 class DockingStation
 
+DEFAULT_CAPACITY = 20
+
 def initialize
  @bikes = [ ]
 end
@@ -27,7 +29,7 @@ end
 private
 
 def full?
-  if @bikes.length >= 20
+  if @bikes.length >= DEFAULT_CAPACITY
      true
   end
 end
