@@ -2,11 +2,11 @@ require_relative 'bike.rb'
 
 class DockingStation
 
-attr_reader :bike
+attr_reader  :bikes
 
 def release_bike
-  if @bike
-    @bike
+  if @bikes
+     @bikes
   else
     fail RuntimeError, "No bikes available."
   end
@@ -14,7 +14,8 @@ end
 
 
   def dock(bike)
-    if @bike == nil then @bike = bike
+
+    if @bikes == nil then @bikes = bike
     else fail RuntimeError, "Bike already docked"
     end
   end
