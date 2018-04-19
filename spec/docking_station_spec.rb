@@ -1,6 +1,7 @@
 require 'docking_station'
 
 describe DockingStation do
+
   it { is_expected.to respond_to :release_bike}
   it "check bike working?" do
     expect(Bike.new.working?).to eq true
@@ -13,7 +14,7 @@ describe DockingStation do
   it "raises error if bike already docked" do
     bike = Bike.new
     subject.dock(bike)
-    expect{ DEFAULT_CAPACITY.times { subject.dock(bike) } }.to raise_error
+    expect{ capacity.times { subject.dock(bike) } }.to raise_error
   end
 
 describe "#release_bike" do
@@ -30,6 +31,4 @@ describe "#release_bike" do
   end
 
 end
-
-
 end

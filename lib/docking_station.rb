@@ -6,9 +6,10 @@ DEFAULT_CAPACITY = 20
 
 def initialize
  @bikes = [ ]
+ @capacity = DEFAULT_CAPACITY
 end
 
- attr_reader  :bikes
+ attr_reader  :capacity
 
 def release_bike
     if empty?
@@ -27,6 +28,8 @@ def dock(bike)
 end
 
 private
+
+attr_reader :bikes
 
 def full?
   if @bikes.length >= DEFAULT_CAPACITY
